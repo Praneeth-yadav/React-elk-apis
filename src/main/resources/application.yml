@@ -1,5 +1,20 @@
 spring:
-    data:
-     mongodb:
-      uri: mongodb+srv://epraneeth27510:Smallworld%409286@atlascluster.rv2dxa7.mongodb.net/?retryWrites=true&w=majority
-      database: ELK_Login
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+#      enabled: true
+  application:
+    name: ecom_api
+  config:
+    import: configserver:http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:
+
+#    data:
+#     mongodb:
+#      uri: mongodb+srv://epraneeth27510:Smallworld%409286@atlascluster.rv2dxa7.mongodb.net/?retryWrites=true&w=majority
+#      database: ELK_Login
